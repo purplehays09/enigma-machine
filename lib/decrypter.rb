@@ -24,10 +24,10 @@ class Decrypter
 
   def char_move(char,distance)
     char_start = ALPHA.index(char)
-    ALPHA[(char_start + distance) % 27]
+    ALPHA[(char_start - distance) % 27]
   end
 
-  def encrypt
+  def decrypt
     response = ""
     shifter = key_maker
 

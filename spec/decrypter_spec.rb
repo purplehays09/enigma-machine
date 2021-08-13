@@ -13,23 +13,23 @@ RSpec.describe Decrypter do
     expect(decrypter.date).to eq("040895")
   end
 
-  xit "can create keys" do
+  it "can create keys" do
     expect(decrypter.key_maker).to eq([3, 27, 73, 20])
   end
   
-  xit "can decrypt a single char" do
+  it "can decrypt a single char" do
     expect(decrypter.char_move(
       decrypter.ciphertext[0], 
       decrypter.key_maker[0])
-    ).to eq("k")
+    ).to eq("h")
     expect(decrypter.char_move(
       decrypter.ciphertext[2], 
       decrypter.key_maker[2])
-    ).to eq("d")
+    ).to eq("l")
   end
   
   
-  xit "can decrypt a ciphertext" do
+  it "can decrypt a ciphertext" do
     expect(decrypter.decrypt).to eq("hello world")
   end
   
