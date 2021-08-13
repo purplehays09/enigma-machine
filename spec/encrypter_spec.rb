@@ -8,6 +8,15 @@ RSpec.describe Encrypter do
     expect(encrypter.key).to eq("02715")
     expect(encrypter.date).to eq("040895")
   end
+
+  it "can create keys" do
+    expect(encrypter.key_maker).to eq([3, 27, 73, 20])
+  end
+  
+  
+  xit "can encrypt a message" do
+    expect(encrypter.encrypt).to eq("keder ohulw")
+  end
   
   
 end
