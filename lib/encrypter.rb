@@ -26,5 +26,18 @@ class Encrypter
     char_start = ALPHA.index(char)
     ALPHA[(char_start + distance) % 27]
   end
+
+  def encrypt
+    response = ""
+    shifter = key_maker
+
+    message.length.times do |iter|
+      response += char_move(
+        message[iter],
+        shifter[(iter) % 4]
+      )
+    end
+    response
+  end
   
 end

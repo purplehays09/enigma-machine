@@ -25,7 +25,7 @@ RSpec.describe Encrypter do
   end
   
   
-  xit "can encrypt a message" do
+  it "can encrypt a message" do
     expect(encrypter.encrypt).to eq("keder ohulw")
   end
   
