@@ -21,5 +21,10 @@ class Encrypter
 
     split_key
   end
+
+  def char_move(char,distance)
+    char_start = ALPHA.index(char)
+    ALPHA[(char_start + distance) % 27]
+  end
   
 end
