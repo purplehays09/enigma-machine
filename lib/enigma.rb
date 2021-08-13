@@ -9,12 +9,23 @@ class Enigma
   end
   
   def add_message(message,key,date)
-    puts "\n\nmessage\n#{message}\nkey\n#{key}\ndate\n#{date}\n\n"
-    Encrypter.new(
+    encrypter = Encrypter.new(
       message,
       key,
       date
     )
+    messages << encrypter
+    encrypter
+  end
+  
+  def add_cipher(ciphertext,key,date)
+    decrypter = Decrypter.new(
+      ciphertext,
+      key,
+      date
+    )
+    ciphers << decrypter
+    decrypter
   end
   
 end

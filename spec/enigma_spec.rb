@@ -27,4 +27,12 @@ RSpec.describe Enigma do
     ).encrypt).to eq("keder ohulw")
   end
   
+  it "decodes cypher" do
+    expect(enigma.add_cipher(
+      ciphertext[:ciphertext],
+      message[:key],
+      message[:date]
+    ).decrypt).to eq("hello world")
+  end
+  
 end
