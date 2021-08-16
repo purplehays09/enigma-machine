@@ -8,7 +8,7 @@ class Enigma
     @ciphers = []
   end
   
-  def add_message(message,key,date)
+  def add_message(message, key, date)
     encrypter = Encrypter.new(
       message,
       key,
@@ -18,7 +18,7 @@ class Enigma
     encrypter
   end
   
-  def add_cipher(ciphertext,key,date)
+  def add_cipher(ciphertext, key, date)
     decrypter = Decrypter.new(
       ciphertext,
       key,

@@ -24,7 +24,7 @@ RSpec.describe Enigma do
       message[:message],
       message[:key],
       message[:date]
-    ).encrypt).to eq("keder ohulw")
+    ).encrypt.encryption).to eq("keder ohulw")
   end
   
   it "decodes cypher" do
@@ -32,7 +32,7 @@ RSpec.describe Enigma do
       ciphertext[:ciphertext],
       message[:key],
       message[:date]
-    ).decrypt).to eq("hello world")
+    ).decrypt.decryption).to eq("hello world")
   end
   
 end

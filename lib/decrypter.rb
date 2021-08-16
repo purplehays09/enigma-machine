@@ -37,7 +37,11 @@ class Decrypter
         shifter[(iter) % 4]
       )
     end
-    response
+    {
+      :decryption => response,
+      :key => key,
+      :date => date
+    }
   end
   
 end

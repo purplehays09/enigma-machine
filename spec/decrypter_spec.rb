@@ -30,7 +30,7 @@ RSpec.describe Decrypter do
   
   
   it "can decrypt a ciphertext" do
-    expect(decrypter.decrypt).to eq("hello world")
+    expect(decrypter.decrypt.decryption).to eq("hello world")
   end
   
 end

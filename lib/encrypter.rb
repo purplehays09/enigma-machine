@@ -37,7 +37,11 @@ class Encrypter
         shifter[(iter) % 4]
       )
     end
-    response
+    {
+      :encryption => response,
+      :key => key,
+      :date => date
+    }
   end
   
 end
