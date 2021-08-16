@@ -1,0 +1,36 @@
+require './lib/decrypter'
+
+RSpec.describe Decrypter do
+  let(:decrypter) { Decrypter.new(
+    "keder ohulw", 
+    "02715", 
+    "040895"
+  )}
+
+  it "can take a code key and date" do
+    expect(decrypter.ciphertext).to eq("keder ohulw")
+    expect(decrypter.key).to eq("02715")
+    expect(decrypter.date).to eq("040895")
+  end
+
+  it "can create keys" do
+    expect(decrypter.key_maker).to eq([3, 27, 73, 20])
+  end
+  
+  it "can decrypt a single char" do
+    expect(decrypter.char_move(
+      decrypter.ciphertext[0], 
+      decrypter.key_maker[0])
+    ).to eq("h")
+    expect(decrypter.char_move(
+      decrypter.ciphertext[2], 
+      decrypter.key_maker[2])
+    ).to eq("l")
+  end
+  
+  
+  it "can decrypt a ciphertext" do
+    expect(decrypter.decrypt.decryption).to eq("hello world")
+  end
+  
+end
